@@ -13,12 +13,12 @@ export const clientLinks = [
 ];
 
 export const nav = [
-  { label: "Le cabinet", href: "#cabinet" },
-  { label: "Services", href: "#services" },
-  { label: "Outils", href: "#outils" },
-  { label: "Équipe", href: "#equipe" },
-  { label: "Recrutement", href: "#recrutement" },
-  { label: "Contact", href: "#contact" },
+  { label: "Le cabinet", href: "/le-cabinet" },
+  { label: "Services", href: "/nos-services" },
+  { label: "Outils", href: "/nos-outils" },
+  { label: "Équipe", href: "/le-cabinet#equipe" },
+  { label: "Recrutement", href: "/recrutement" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const services = [

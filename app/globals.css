@@ -333,6 +333,14 @@ img {
   background: var(--forest);
   color: var(--cream);
 }
+.pt-header {
+  padding-top: 130px;
+}
+.page-header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 40px;
+}
 .client {
   position: relative;
 }

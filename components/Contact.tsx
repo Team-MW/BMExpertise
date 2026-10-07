@@ -173,10 +173,10 @@ export function Footer() {
           <div className="footer-cols">
             <div>
               <h4>Navigation</h4>
-              <a href="#cabinet">Le cabinet</a>
-              <a href="#services">Nos services</a>
-              <a href="#outils">Nos outils</a>
-              <a href="#recrutement">Recrutement</a>
+              <a href="/le-cabinet">Le cabinet</a>
+              <a href="/nos-services">Nos services</a>
+              <a href="/nos-outils">Nos outils</a>
+              <a href="/recrutement">Recrutement</a>
             </div>
             <div>
               <h4>Espace client</h4>
@@ -198,6 +198,7 @@ export function Footer() {
         <div className="footer-bottom">
           <span>© 2026 B&amp;M Expertise – Audit. Tous droits réservés.</span>
           <div>
+            <a href="https://microdidact.com" target="_blank" rel="noopener noreferrer">Réalisé par Microdidact</a>
             <a href="#">Mentions légales</a>
             <a href="#">Politique de confidentialité</a>
           </div>
