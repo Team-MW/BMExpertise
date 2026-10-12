@@ -47,7 +47,7 @@ export function SplitTitle({
   // overflow:hidden mask, so observing the words would never trigger.
   const inView = useInView(ref, { once: true, amount: 0.2 });
   return (
-    <Tag ref={ref} className={className} aria-label={text}>
+    <Tag ref={ref} className={className} aria-label={text.replace(/(^|\s)_/g, "$1").replace(/\s\|\s?/g, " ")}>
       {words.map((w, i) => (
         <span key={i} className="word-mask" aria-hidden>
           <motion.span
