@@ -42,15 +42,18 @@ export function SplitTitle({
   delay?: number;
 }) {
   const words = text.split(" ");
+  const ref = useRef<HTMLHeadingElement>(null);
+  // Observe the (visible) heading itself: each word is fully clipped by its
+  // overflow:hidden mask, so observing the words would never trigger.
+  const inView = useInView(ref, { once: true, amount: 0.2 });
   return (
-    <Tag className={className} aria-label={text}>
+    <Tag ref={ref} className={className} aria-label={text}>
       {words.map((w, i) => (
         <span key={i} className="word-mask" aria-hidden>
           <motion.span
             className="word"
             initial={{ y: "110%" }}
-            whileInView={{ y: "0%" }}
-            viewport={{ once: true, margin: "-60px" }}
+            animate={inView ? { y: "0%" } : { y: "110%" }}
             transition={{ duration: 1, delay: delay + i * 0.06, ease }}
           >
             {w === "|" ? <em>&nbsp;</em> : w.startsWith("_") ? <em>{w.slice(1)}</em> : w}

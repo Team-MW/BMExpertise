@@ -166,3 +166,26 @@ export const jobs = [
   { dept: "Social – RH", title: "Gestionnaire de paie", type: "Alternance" },
   { dept: "Service juridique", title: "Juriste", type: "Stage" },
 ];
+
+export const faqs = [
+  {
+    question: "Comment B&M Expertise m'accompagne-t-il dans la création de mon entreprise ?",
+    answer: "Nous vous accompagnons à chaque étape : du choix de la structure juridique la plus adaptée à votre projet, jusqu'à l'élaboration du prévisionnel financier et l'immatriculation. Notre objectif est de sécuriser le lancement de votre activité."
+  },
+  {
+    question: "Puis-je accéder à ma comptabilité en ligne et en temps réel ?",
+    answer: "Absolument. B&M Expertise est un cabinet 100 % digitalisé. Vous disposez d'un espace client sécurisé (via Ma Compta, Ma Gestion) accessible sur mobile et ordinateur, vous permettant de consulter vos tableaux de bord et indicateurs en temps réel."
+  },
+  {
+    question: "Gérez-vous la paie et les ressources humaines ?",
+    answer: "Oui, notre pôle Social – RH est dédié à la gestion de vos fiches de paie, aux déclarations sociales (DSN) et vous assiste pour toutes vos problématiques de droit social (contrats de travail, licenciements, etc.)."
+  },
+  {
+    question: "Intervenez-vous en tant que commissaire aux comptes (audit légal) ?",
+    answer: "Oui, B&M Expertise dispose d'un pôle d'audit qui intervient en tant que commissaire aux comptes pour l'audit légal, garantissant la régularité et la sincérité de vos comptes, ainsi que pour des audits contractuels spécifiques."
+  },
+  {
+    question: "Quels secteurs d'activité accompagnez-vous principalement ?",
+    answer: "Nous avons une forte expertise dans l'hôtellerie, la restauration, les galeries d'art, l'audiovisuel, la presse, et les agences de communication, mais nous accompagnons avec le même soin les TPE, PME et holdings de tous secteurs."
+  }
+];

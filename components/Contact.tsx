@@ -2,12 +2,13 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, Clock, Mail, MapPin, Phone } from "lucide-react";
+import Link from "next/link";
 import { FormEvent, useState } from "react";
 import { contact } from "@/lib/content";
 import Logo from "./Logo";
 import { Reveal, SplitTitle } from "./motion";
 
-export function Contact() {
+export function Contact({ asPage = false }: { asPage?: boolean }) {
   const [sent, setSent] = useState(false);
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -29,7 +30,7 @@ export function Contact() {
               <span className="dot" /> Contact
             </p>
           </Reveal>
-          <SplitTitle className="h2" text="Parlons de _votre projet." />
+          <SplitTitle className="h2" as={asPage ? "h1" : "h2"} text="Parlons de _votre projet." />
           <Reveal delay={0.1}>
             <p className="lead">Une question, un besoin d’accompagnement ? Nous vous répondons sous 24 h ouvrées.</p>
           </Reveal>
@@ -42,15 +43,27 @@ export function Contact() {
               { icon: Clock, label: "Horaires", value: contact.hours },
             ].map((it, i) => (
               <Reveal key={it.label} delay={0.1 + i * 0.06}>
-                <a className="info-item" href={it.href} target={it.href?.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer">
-                  <span className="info-icon">
-                    <it.icon size={18} />
-                  </span>
-                  <span>
-                    <small>{it.label}</small>
-                    {it.value}
-                  </span>
-                </a>
+                {it.href ? (
+                  <a className="info-item" href={it.href} target={it.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer">
+                    <span className="info-icon">
+                      <it.icon size={18} />
+                    </span>
+                    <span>
+                      <small>{it.label}</small>
+                      {it.value}
+                    </span>
+                  </a>
+                ) : (
+                  <div className="info-item">
+                    <span className="info-icon">
+                      <it.icon size={18} />
+                    </span>
+                    <span>
+                      <small>{it.label}</small>
+                      {it.value}
+                    </span>
+                  </div>
+                )}
               </Reveal>
             ))}
           </div>
@@ -149,10 +162,10 @@ export function CtaBand() {
           </h2>
         </Reveal>
         <Reveal delay={0.2}>
-          <a href="#contact" className="cta-circle" id="cta-band-btn">
+          <Link href="/contact" className="cta-circle" id="cta-band-btn">
             <span>Prendre rendez-vous</span>
             <ArrowRight size={22} />
-          </a>
+          </Link>
         </Reveal>
       </div>
     </section>

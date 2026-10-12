@@ -5,6 +5,7 @@ import "./globals.css";
 import "./sections.css";
 import "./sections2.css";
 import "./sections3.css";
+import "./faq.css";
 
 const serif = Instrument_Serif({
   variable: "--font-serif",
@@ -31,12 +32,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+import Header from "@/components/Header";
+import { Footer } from "@/components/Contact";
+import { Faq } from "@/components/Faq";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" className={`${serif.variable} ${sans.variable}`}>
       <body>
         <SmoothScroll />
+        <Header />
         {children}
+        <Faq />
+        <Footer />
       </body>
     </html>
   );

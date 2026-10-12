@@ -101,7 +101,7 @@ export default function Services() {
                     </motion.span>
                   ))}
                 </div>
-                <a href="#contact" className="panel-link" id={`service-cta-${current.id}`}>
+                <a href="/contact" className="panel-link" id={`service-cta-${current.id}`}>
                   Échanger avec un expert <ArrowRight size={16} />
                 </a>
               </motion.div>
